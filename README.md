@@ -10,8 +10,11 @@ puxados da internet.
 **Tasks**
 
 - [ ] Algoritmo para o retorno de fatos aleatorios.
-- [ ] Popular API.
-- [ ] Criar um serviço para popular a API baseado em sites de curiosidades automaticamente.
+- [ ] Popular a API
+  - [X] Jogar os dados da raspagem para o banco de dados.
+  - [ ] Criar validação de dados para não repitir os dados dentro do banco.
+  - [ ] Resumir o texto para usa-lo como titulo do fato aleatorio.
+  - [ ] Não adicionar fatos iguais dentro do banco de dados
 - [ ] Criar os teste unitarios.
 - [ ] Estudar mais sobre git e github no geral.
 - [ ] Escolher uma licença para o projeto.

@@ -1,7 +1,9 @@
 package com.fact.finder.model;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serial;
@@ -20,7 +22,12 @@ public class FunFact implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    private String title;
-    private String body;
-    private String source;
+    @Builder.Default
+    private String title = "N/A";
+
+    @Builder.Default
+    private String body = "N/A";
+
+    @Builder.Default
+    private String source = "N/A";
 }
