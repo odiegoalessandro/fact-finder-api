@@ -12,14 +12,14 @@ puxados da internet.
 - [X] Algoritmo para o retorno de fatos aleatorios.
 - [ ] Popular a API
   - [X] Jogar os dados da raspagem para o banco de dados.
-  - [ ] Criar validação de dados para não repetir os dados dentro do banco.
+  - [X] Criar validação de dados para não repetir os dados dentro do banco.
   - [ ] Resumir o texto para usa-lo como titulo do fato aleatorio.
-  - [ ] Não adicionar fatos iguais dentro do banco de dados
+  - [X] Não adicionar fatos iguais dentro do banco de dados
 - [ ] Criar os teste unitarios.
 - [ ] Escolher uma licença para o projeto.
 - [ ] Criar a documentação.
-- [ ] Criar uma logica para categorizar os fatos como por exemplo por source,
-por assunto e coisas to tipo.
+- [ ] Criar uma logica para categorizar os fatos como, por exemplo, source,
+titulo e outros campos.
 - [ ] Achar um meio de hospedagem gratuita.
 
 **Futuros projetos baseados nessa API**
