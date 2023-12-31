@@ -10,15 +10,12 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.*;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.mockito.BDDMockito.then;
 
-
-@SpringBootTest
 @ExtendWith(MockitoExtension.class)
 public class FactServiceTests {
     @InjectMocks
@@ -32,7 +29,7 @@ public class FactServiceTests {
 
     @Test
     @DisplayName("Deve retornar um fato criado com sucesso sem informações nulas")
-    void shouldReturnCreatedFact(){
+    void shouldReturnCreatedFact() {
         FactDto factDto = new FactDto("2+2=4", "2+2=4", "FactServiceTests");
 
         factService.save(factDto);
@@ -45,7 +42,7 @@ public class FactServiceTests {
 
     @Test
     @DisplayName("Deve retornar um fato aleatorio de uma lista com itens dentro dela")
-    void shouldReturnRandomFact(){
+    void shouldReturnRandomFact() {
         FactDto factDto = new FactDto("2+2=4", "2+2=4", "FactServiceTests");
         FactDto factDto2 = new FactDto("3+3=6", "3+3=", "FactServiceTests");
 
@@ -63,15 +60,15 @@ public class FactServiceTests {
 
     @Test
     @DisplayName("Deve retornar um erro ao tentar obter um fato de uma lista vazia")
-    void shouldReturnAnErrorWhenPickingUpARandomFact(){
-         BDDMockito.given(factRepository.findAll()).willReturn(new ArrayList<>());
+    void shouldReturnAnErrorWhenPickingUpARandomFact() {
+        BDDMockito.given(factRepository.findAll()).willReturn(new ArrayList<>());
 
         Assertions.assertThrows(Exception.class, () -> factService.getRandomFact());
     }
 
     @Test
     @DisplayName("Deve retornar toda a lista de fatos com um fato dentro")
-    void shouldReturnListOfFactsWithFactWithin(){
+    void shouldReturnListOfFactsWithFactWithin() {
         FactDto factDto = new FactDto("2+2=4", "2+2=4", "FactServiceTests");
         Fact fact = new Fact(factDto);
 
@@ -84,7 +81,7 @@ public class FactServiceTests {
 
     @Test
     @DisplayName("Deve retornar uma lista vazia tentar obter a lista de fatos sem nada dentro")
-    void shouldReturnAEmptyList(){
+    void shouldReturnAEmptyList() {
         List<Fact> facts = new ArrayList<>();
 
         BDDMockito.given(factRepository.findAll()).willReturn(facts);

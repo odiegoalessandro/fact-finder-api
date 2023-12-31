@@ -13,7 +13,7 @@ import java.util.Random;
 
 @RestController
 @RequestMapping("/facts")
-public class FunFactController {
+public class FactController {
     @Autowired
     FactService factService;
 
@@ -22,17 +22,21 @@ public class FunFactController {
         return ResponseEntity.status(200).body(factService.getAllFacts());
     }
 
-    @GetMapping("/random-fact")
+    @GetMapping("/random")
     public ResponseEntity<Object> getRandomFact() {
         try {
             List<Fact> facts = getAllFacts().getBody();
-            Random random = new Random();
 
-            int randomIndex = random.nextInt(facts.size());
+            if(!facts.isEmpty()){
+                Random random = new Random();
+                int randomIndex = random.nextInt(facts.size());
 
-            return ResponseEntity.status(200).body(facts.get(randomIndex));
+                return ResponseEntity.status(200).body(facts.get(randomIndex));
+            }
+
+            return ResponseEntity.status(404).body("Tabela de fatos está vazia");
         } catch (Exception e) {
-            return ResponseEntity.status(404).body(e.getMessage());
+            return ResponseEntity.status(400).body(e.getMessage());
         }
     }
 }
