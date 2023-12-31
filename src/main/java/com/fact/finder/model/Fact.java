@@ -1,8 +1,10 @@
 package com.fact.finder.model;
 
+import com.fact.finder.dto.FactDto;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serial;
@@ -10,10 +12,9 @@ import java.io.Serializable;
 import java.util.UUID;
 
 @Getter
-@Setter
 @Entity
 @Table(name = "FACT_TABLE")
-public class FunFact implements Serializable {
+public class Fact implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
@@ -29,4 +30,10 @@ public class FunFact implements Serializable {
 
     @Builder.Default
     private String source = "N/A";
+
+    public Fact(FactDto factDto) {
+        this.title = factDto.getTitle();
+        this.body = factDto.getBody();
+        this.source = factDto.getSource();
+    }
 }

@@ -1,8 +1,9 @@
 package com.fact.finder.services;
 
 import com.fact.finder.dto.DataSourceUselessFactsApi;
-import com.fact.finder.model.FunFact;
-import com.fact.finder.repository.FunFactRespository;
+import com.fact.finder.dto.FactDto;
+import com.fact.finder.model.Fact;
+import com.fact.finder.repository.FactRespository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -15,37 +16,30 @@ import java.util.Objects;
 @Service
 public class UselessApiService implements DataSource {
     private final RestTemplate restTemplate;
+    private final String url;
 
     @Autowired
-    private FunFactRespository factRespository;
+    private FactService factService;
 
     public UselessApiService() {
+        this.url = "https://useless-facts.sameerkumar.website/api";
         this.restTemplate = new RestTemplate();
     }
 
     @Override
-    @Scheduled(fixedRate = 10 * 200)
     @Transactional
+    @Scheduled(fixedRate = 10 * 200)
     public void fetchData() {
-        String url = "https://useless-facts.sameerkumar.website/api";
 
         ResponseEntity<DataSourceUselessFactsApi> response =
                 this.restTemplate.getForEntity(url, DataSourceUselessFactsApi.class);
 
-
         String body = Objects.requireNonNull(response.getBody()).body();
+        FactDto fact = new FactDto(body, body, url);
 
-        if (factRespository.findByTitle(body) == null) {
-            FunFact fact = new FunFact();
+        factService.save(fact);
 
-            fact.setBody(body);
-            fact.setTitle(body);
-            fact.setSource(url);
 
-            factRespository.save(fact);
-        } else {
-            System.out.println("Fato não adicionado ao banco de dados por ja possuir cadastro.");
-        }
     }
 
 }
