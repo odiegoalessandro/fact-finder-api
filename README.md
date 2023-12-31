@@ -9,15 +9,19 @@ puxados da internet.
 
 **Tasks**
 
-- [ ] Algoritmo para o retorno de fatos aleatorios.
-- [ ] Popular API.
-- [ ] Criar um serviço para popular a API baseado em sites de curiosidades automaticamente.
-- [ ] Criar os teste unitarios.
-- [ ] Estudar mais sobre git e github no geral.
+- [X] Algoritmo para o retorno de fatos aleatorios.
+- [ ] Popular a API
+  - [X] Jogar os dados da raspagem para o banco de dados.
+  - [X] Criar validação de dados para não repetir os dados dentro do banco.
+  - [X] Não adicionar fatos iguais dentro do banco de dados.
+  - [X] Criar os teste unitarios.
+  - [ ] Adicionar mais fontes para popular o banco de dados.
 - [ ] Escolher uma licença para o projeto.
 - [ ] Criar a documentação.
+- [ ] Criar uma logica para categorizar os fatos como, por exemplo, source,
+titulo e outros campos.
 - [ ] Achar um meio de hospedagem gratuita.
-- [ ] Configurar um cron job para executar os serviços de raspagem de dados.
+- [ ] Criar testes de integração para o banco de dados e api's externas
 
 **Futuros projetos baseados nessa API**
 1. CLI de fatos aleatorios.
