@@ -13,9 +13,9 @@ puxados da internet.
 - [ ] Popular a API
   - [X] Jogar os dados da raspagem para o banco de dados.
   - [X] Criar validação de dados para não repetir os dados dentro do banco.
-  - [ ] Resumir o texto para usa-lo como titulo do fato aleatorio.
-  - [X] Não adicionar fatos iguais dentro do banco de dados
-- [ ] Criar os teste unitarios.
+  - [X] Não adicionar fatos iguais dentro do banco de dados.
+  - [X] Criar os teste unitarios.
+  - [ ] Adicionar mais fontes para popular o banco de dados.
 - [ ] Escolher uma licença para o projeto.
 - [ ] Criar a documentação.
 - [ ] Criar uma logica para categorizar os fatos como, por exemplo, source,

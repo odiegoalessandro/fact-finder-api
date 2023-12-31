@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;
 
-public interface FactRespository extends JpaRepository<Fact, UUID> {
+public interface FactRepository extends JpaRepository<Fact, UUID> {
     Fact findByTitle(String title);
 }

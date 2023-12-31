@@ -2,10 +2,11 @@ package com.fact.finder.services;
 
 import com.fact.finder.dto.FactDto;
 import com.fact.finder.model.Fact;
-import com.fact.finder.repository.FactRespository;
+import com.fact.finder.repository.FactRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -13,39 +14,38 @@ import java.util.Random;
 public class FactService {
 
     @Autowired
-    private FactRespository factRespository;
+    private FactRepository factRepository;
 
     public List<Fact> getAllFacts() {
+        List<Fact> facts = factRepository.findAll();
 
-        return factRespository.findAll();
+        if(facts != null){
+            return facts;
+        }
+
+        return new ArrayList<>();
     }
 
     public Fact getRandomFact() {
-
         Random random = new Random();
         List<Fact> facts = getAllFacts();
 
-        int randomFactIndex = random.nextInt(facts.size());
+        if(facts != null){
+            int randomFactIndex = random.nextInt(facts.size());
+            return facts.get(randomFactIndex);
+        }
 
-        return facts.get(randomFactIndex);
-    }
-
-    public Fact getByTitle(String title) {
-
-        Fact fact = factRespository.findByTitle(title);
-
-        return fact;
+        throw new IllegalArgumentException("Erro ao obter um fato");
     }
 
     public Fact save(FactDto fact) {
 
-        if (factRespository.findByTitle(fact.getTitle()) != null) {
+        if (factRepository.findByTitle(fact.getTitle()) != null) {
             throw new IllegalArgumentException("Fato já cadastrado");
         }
 
-        // Por segurança criamos uma nova instacia de Fact
         Fact factToSave = new Fact(fact);
 
-        return factRespository.save(factToSave);
+        return factRepository.save(factToSave);
     }
 }
