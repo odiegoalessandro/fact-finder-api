@@ -21,6 +21,7 @@ puxados da internet.
 - [ ] Criar uma logica para categorizar os fatos como, por exemplo, source,
 titulo e outros campos.
 - [ ] Achar um meio de hospedagem gratuita.
+- [ ] Criar testes de integração para o banco de dados e api's externas
 
 **Futuros projetos baseados nessa API**
 1. CLI de fatos aleatorios.
