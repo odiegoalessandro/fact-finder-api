@@ -28,8 +28,8 @@ public class Fact implements Serializable {
     private String source;
 
     public Fact(FactDto factDto) {
-        this.title = factDto.getTitle();
-        this.body = factDto.getBody();
-        this.source = factDto.getSource();
+        this.title = factDto.title();
+        this.body = factDto.body();
+        this.source = factDto.source();
     }
 }

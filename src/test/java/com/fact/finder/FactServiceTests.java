@@ -38,9 +38,9 @@ public class FactServiceTests {
         factService.save(factDto);
 
         then(factRepository).should().save(factCaptor.capture());
-        Assertions.assertEquals(factDto.getTitle(), factCaptor.getValue().getTitle());
-        Assertions.assertEquals(factDto.getBody(), factCaptor.getValue().getBody());
-        Assertions.assertEquals(factDto.getSource(), factCaptor.getValue().getSource());
+        Assertions.assertEquals(factDto.title(), factCaptor.getValue().getTitle());
+        Assertions.assertEquals(factDto.body(), factCaptor.getValue().getBody());
+        Assertions.assertEquals(factDto.source(), factCaptor.getValue().getSource());
     }
 
     @Test

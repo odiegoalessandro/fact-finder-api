@@ -30,7 +30,9 @@ public class FactService {
         Random random = new Random();
         List<Fact> facts = getAllFacts();
 
-        if(facts != null){
+        System.out.println(facts);
+
+        if(facts != null && !facts.isEmpty()){
             int randomFactIndex = random.nextInt(facts.size());
             return facts.get(randomFactIndex);
         }
@@ -40,7 +42,7 @@ public class FactService {
 
     public Fact save(FactDto fact) {
 
-        if (factRepository.findByTitle(fact.getTitle()) != null) {
+        if (factRepository.findByTitle(fact.title()) != null) {
             throw new IllegalArgumentException("Fato já cadastrado");
         }
 
