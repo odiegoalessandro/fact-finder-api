@@ -4,10 +4,12 @@ import com.fact.finder.dto.FactDto;
 import com.fact.finder.model.Fact;
 import com.fact.finder.repository.FactRespository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Random;
 
+@Service
 public class FactService {
 
     @Autowired
@@ -37,7 +39,7 @@ public class FactService {
 
     public Fact save(FactDto fact) {
 
-        if (factRespository.findByTitle(fact.getTitle()) == null) {
+        if (factRespository.findByTitle(fact.getTitle()) != null) {
             throw new IllegalArgumentException("Fato já cadastrado");
         }
 

@@ -13,6 +13,7 @@ import java.util.UUID;
 
 @Getter
 @Entity
+@NoArgsConstructor()
 @Table(name = "FACT_TABLE")
 public class Fact implements Serializable {
     @Serial
@@ -22,14 +23,9 @@ public class Fact implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    @Builder.Default
-    private String title = "N/A";
-
-    @Builder.Default
-    private String body = "N/A";
-
-    @Builder.Default
-    private String source = "N/A";
+    private String title;
+    private String body;
+    private String source;
 
     public Fact(FactDto factDto) {
         this.title = factDto.getTitle();

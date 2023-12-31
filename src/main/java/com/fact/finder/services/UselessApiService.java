@@ -2,8 +2,6 @@ package com.fact.finder.services;
 
 import com.fact.finder.dto.DataSourceUselessFactsApi;
 import com.fact.finder.dto.FactDto;
-import com.fact.finder.model.Fact;
-import com.fact.finder.repository.FactRespository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -30,16 +28,16 @@ public class UselessApiService implements DataSource {
     @Transactional
     @Scheduled(fixedRate = 10 * 200)
     public void fetchData() {
+        try {
+            ResponseEntity<DataSourceUselessFactsApi> response =
+                    this.restTemplate.getForEntity(url, DataSourceUselessFactsApi.class);
 
-        ResponseEntity<DataSourceUselessFactsApi> response =
-                this.restTemplate.getForEntity(url, DataSourceUselessFactsApi.class);
+            String body = Objects.requireNonNull(response.getBody()).body();
+            FactDto fact = new FactDto(body, body, url);
 
-        String body = Objects.requireNonNull(response.getBody()).body();
-        FactDto fact = new FactDto(body, body, url);
-
-        factService.save(fact);
-
-
+            factService.save(fact);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
-
 }
