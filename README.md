@@ -1,28 +1,51 @@
-# Fact Finder API
+# Fact Finder API🌍
 
-Uma api incrivel que retorna informações/curiosidades inuteis para sua vida!
+Uma API open-source que retorna informações/curiosidades inúteis para sua vida!
 
-**Ideia**
+## Ideia💡
 
-A ideia é criar uma API que retorna fatos/curiosidades inuteis que estão 
-puxados da internet.
+Uma API que retorna fatos aleatórios puxados de comunidades do Reddit
+(ainda em desenvolvimento) e APIs de terceiros. No futuro, planejamos
+usar NLP para corrigir possíveis erros ortográficos, resumo de fatos
+e, quem sabe, tradução para as principais línguas.
 
-**Tasks**
+## Intenção🎯
 
-- [X] Algoritmo para o retorno de fatos aleatorios.
+  A minha ideia é usar esse projeto para fins educativos e colocar em
+  prática conceitos e ferramentas que estou estudando e com sorte ingressar
+  no mundo Open-Source e participar dessa comunidade incrível.
+
+## Mas por que uma API de fatos aleatórios?🧐
+
+  Já existem várias APIs que fazem o mesmo então por que decidi mais uma? Bom
+  a minha ideia não é simplesmente cuspir fatos, mas sim compartilhar essas
+  curiosidades no máximo de idiomas possíveis, e não apenas obter eles de só
+  uma fonte, e muito menos de manual, e sim obtendo fatos de vários lugares
+  diferentes. Caso ainda não tenha ficado claro a ideia do projeto pense nessa API
+  não só como uma API de fatos aleatórios, mas sim uma super API que pega curiosidades
+  de vários lugares e disponibiliza de forma amigável.
+
+## Tasks✅
+
+- [X] Algoritmo para o retorno de fatos aleatórios.
 - [ ] Popular a API
   - [X] Jogar os dados da raspagem para o banco de dados.
-  - [X] Criar validação de dados para não repetir os dados dentro do banco.
+    - [X] Criar validação de dados para não repetir os dados dentro do banco.
   - [X] Não adicionar fatos iguais dentro do banco de dados.
-  - [X] Criar os teste unitarios.
-  - [ ] Adicionar mais fontes para popular o banco de dados.
-- [ ] Escolher uma licença para o projeto.
-- [ ] Criar a documentação.
-- [ ] Criar uma logica para categorizar os fatos como, por exemplo, source,
-titulo e outros campos.
-- [ ] Achar um meio de hospedagem gratuita.
-- [ ] Criar testes de integração para o banco de dados e api's externas
+  - [X] Criar os testes unitários.
+    - [ ] Adicionar mais fontes para popular o banco de dados.
+    - [ ] Obter fatos das comunidades r/Awwducational, r/facts e r/science
+      - [X] Criar um serviço de autenticação da API do Reddit.
+      - [ ] Gerenciar o token do reddit utilizando cache.
+      - [ ] Criar um serviço para obter valores da API do Reddit.
+      - [ ] Criar uma rotina para obter esses valores, tratar eles conforme o padrão de cada e adicionar ao banco
+        de dados.
+        - [ ] Escolher uma licença para o projeto.
+        - [ ] Criar a documentação.
+- [ ] Criar uma lógica para categorizar os fatos, como por exemplo, source, título e outros campos.
+  - [ ] Achar um meio de hospedagem gratuita.
+- [ ] Criar testes de integração para o banco de dados e APIs externas.
 
-**Futuros projetos baseados nessa API**
-1. CLI de fatos aleatorios.
+## Futuros projetos baseados nessa API🔮
+1. CLI de fatos aleatórios.
 2. Site de curiosidades.
