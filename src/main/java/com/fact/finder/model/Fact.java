@@ -23,12 +23,8 @@ public class Fact implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    @Column(unique = true)
     private String title;
-
-    @Column(unique = true)
     private String body;
-
     private String source;
 
     public Fact(FactDto factDto) {

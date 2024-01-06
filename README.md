@@ -34,16 +34,14 @@ e, quem sabe, tradução para as principais línguas.
   - [X] Não adicionar fatos iguais dentro do banco de dados.
   - [X] Criar os testes unitários.
     - [ ] Adicionar mais fontes para popular o banco de dados.
-    - [ ] Obter fatos das comunidades r/Awwducational, r/facts e r/science
-      - [X] Criar um serviço de autenticação da API do Reddit.
-      - [ ] Gerenciar o token do reddit utilizando cache.
-      - [ ] Criar um serviço para obter valores da API do Reddit.
-      - [ ] Criar uma rotina para obter esses valores, tratar eles conforme o padrão de cada e adicionar ao banco
-        de dados.
-        - [ ] Escolher uma licença para o projeto.
-        - [ ] Criar a documentação.
+      - [X] Obter fatos das comunidades r/Awwducational, r/facts e r/science
+        - [X] Criar um serviço para obter valores da API do Reddit.
+        - [X] Criar uma rotina para obter esses valores, tratar eles conforme o padrão de cada e adicionar ao banco
+          de dados.
+- [ ] Escolher uma licença para o projeto.
+- [ ] Criar a documentação.
 - [ ] Criar uma lógica para categorizar os fatos, como por exemplo, source, título e outros campos.
-  - [ ] Achar um meio de hospedagem gratuita.
+- [ ] Achar um meio de hospedagem gratuita.
 - [ ] Criar testes de integração para o banco de dados e APIs externas.
 
 ## Futuros projetos baseados nessa API🔮
