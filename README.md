@@ -29,14 +29,14 @@ de vários lugares e disponibiliza de forma amigável.
 - [X] Algoritmo para o retorno de fatos aleatórios.
 - [X] Popular a API
   - [X] Jogar os dados da raspagem para o banco de dados.
-   - [X] Criar validação de dados para não repetir os dados dentro do banco.
-  - [X] Não adicionar fatos iguais dentro do banco de dados.
-  - [X] Criar os testes unitários.
-   - [X] Adicionar mais fontes para popular o banco de dados.
-    - [X] Obter fatos das comunidades r/Awwducational, r/facts e r/science
-     - [X] Criar um serviço para obter valores da API do Reddit.
-     - [X] Criar uma rotina para obter esses valores, tratar eles conforme o padrão de cada e adicionar ao banco
-          de dados.
+    - [X] Criar validação de dados para não repetir os dados dentro do banco.
+      - [X] Não adicionar fatos iguais dentro do banco de dados.
+      - [X] Criar os testes unitários.
+      - [X] Adicionar mais fontes para popular o banco de dados.
+        - [X] Obter fatos das comunidades r/Awwducational, r/facts e r/science
+          - [X] Criar um serviço para obter valores da API do Reddit.
+          - [X] Criar uma rotina para obter esses valores, tratar eles conforme o padrão de cada e adicionar ao banco
+               de dados.
 - [ ] Escolher uma licença para o projeto.
 - [ ] Criar a documentação.
 - [ ] Criar uma lógica para categorizar os fatos, como por exemplo, source, título e outros campos.
