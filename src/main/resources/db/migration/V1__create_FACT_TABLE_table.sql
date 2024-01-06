@@ -3,4 +3,5 @@ CREATE TABLE FACT_TABLE(
     title TEXT,
     body TEXT,
     source VARCHAR(200)
+
 )

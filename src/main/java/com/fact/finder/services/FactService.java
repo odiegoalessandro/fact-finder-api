@@ -3,6 +3,7 @@ package com.fact.finder.services;
 import com.fact.finder.dto.FactDto;
 import com.fact.finder.model.Fact;
 import com.fact.finder.repository.FactRepository;
+import jakarta.persistence.EntityExistsException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,8 +31,6 @@ public class FactService {
         Random random = new Random();
         List<Fact> facts = getAllFacts();
 
-        System.out.println(facts);
-
         if(facts != null && !facts.isEmpty()){
             int randomFactIndex = random.nextInt(facts.size());
             return facts.get(randomFactIndex);
@@ -40,10 +39,18 @@ public class FactService {
         throw new IllegalArgumentException("Erro ao obter um fato");
     }
 
+    public List<Fact> saveAll(List<FactDto> factsDto){
+        List<Fact> facts = factsDto.stream().map(Fact::new).toList();
+        List<Fact> factsToSafe = facts.stream()
+                .filter(fact -> factRepository.findAllByTitle(fact.getTitle()) == null).toList();
+
+        return factRepository.saveAll(factsToSafe);
+    }
+
     public Fact save(FactDto fact) {
 
         if (factRepository.findByTitle(fact.title()) != null) {
-            throw new IllegalArgumentException("Fato já cadastrado");
+            throw new EntityExistsException("Fato já cadastrado");
         }
 
         Fact factToSave = new Fact(fact);
