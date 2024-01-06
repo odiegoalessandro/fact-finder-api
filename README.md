@@ -37,7 +37,7 @@ de vários lugares e disponibiliza de forma amigável.
           - [X] Criar um serviço para obter valores da API do Reddit.
           - [X] Criar uma rotina para obter esses valores, tratar eles conforme o padrão de cada e adicionar ao banco
                de dados.
-- [ ] Escolher uma licença para o projeto.
+- [X] Escolher uma licença para o projeto.
 - [ ] Criar a documentação.
 - [ ] Criar uma lógica para categorizar os fatos, como por exemplo, source, título e outros campos.
 - [ ] Achar um meio de hospedagem gratuita.
