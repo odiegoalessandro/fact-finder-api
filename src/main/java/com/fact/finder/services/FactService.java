@@ -31,8 +31,6 @@ public class FactService {
         Random random = new Random();
         List<Fact> facts = getAllFacts();
 
-        System.out.println(facts);
-
         if(facts != null && !facts.isEmpty()){
             int randomFactIndex = random.nextInt(facts.size());
             return facts.get(randomFactIndex);
@@ -44,7 +42,7 @@ public class FactService {
     public List<Fact> saveAll(List<FactDto> factsDto){
         List<Fact> facts = factsDto.stream().map(Fact::new).toList();
         List<Fact> factsToSafe = facts.stream()
-                .filter(fact -> factRepository.findByTitle(fact.getTitle()) == null).toList();
+                .filter(fact -> factRepository.findAllByTitle(fact.getTitle()) == null).toList();
 
         return factRepository.saveAll(factsToSafe);
     }

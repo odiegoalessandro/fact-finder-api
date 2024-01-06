@@ -32,4 +32,9 @@ public class Fact implements Serializable {
         this.body = factDto.body();
         this.source = factDto.source();
     }
+
+    @Override
+    public String toString() {
+        return "[title=" + title + ",body=" + body + ",source=" + source + "]";
+    }
 }
