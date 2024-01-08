@@ -14,16 +14,6 @@ diferentes. Caso ainda não tenha ficado claro a ideia do projeto pense nessa AP
 não só como uma API de fatos aleatórios, mas sim uma super API que pega curiosidades
 de vários lugares e disponibiliza de forma amigável.
 
-## Mas por que uma API de fatos aleatórios?🧐
-
-Já existem várias APIs que fazem o mesmo então por que decidi mais uma? Bom
-a minha ideia não é simplesmente cuspir fatos, mas sim compartilhar essas 
-curiosidades no máximo de idiomas possíveis, e não apenas obter eles de só
-uma fonte, e muito menos de manual, e sim obtendo fatos de vários lugares 
-diferentes. Caso ainda não tenha ficado claro a ideia do projeto pense nessa API
-não só como uma API de fatos aleatórios, mas sim uma super API que pega curiosidades
-de vários lugares e disponibiliza de forma amigável.
-
 ## Tasks✅
 
 - [X] Algoritmo para o retorno de fatos aleatórios.
